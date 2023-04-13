@@ -23,15 +23,7 @@ class Test_DemoClass:
     #her testten sonra çağrılır
     def teardown_method(self):
         self.driver.quit()
-
-    def readData(self):
-        print("x")
-
-    # setup -> test_demoFunc -> teardown
-    def test_demoFunc(self):
-        # 3A Act Arrange Assert
-        text = "Hello"
-        assert text == "Hello"
+        
     #@mark.skip()
     @mark.parametrize("username,password",[("1","1"), ("kullaniciadim","sifrem")])
     def test_invalid_login(self,username,password):
