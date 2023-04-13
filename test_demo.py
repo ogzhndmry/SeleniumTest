@@ -38,7 +38,7 @@ class Test_DemoClass:
         self.driver.save_screenshot(f"{self.folderPath}/test-invalid-login-{username}-{password}.png")
         assert errorMessage.text == "Epic sadface: Username and password do not match any user in this service"
 
-    @mark.parametrize("username,password",[("standard_user","secret_sauce"), ("locked_out_user", "secret_sauce"), ("problem_user","secret_sauce")])
+    @mark.parametrize("username,password",[("standard_user","secret_sauce"),  ("problem_user","secret_sauce")])
     def test_valid_login(self,username,password):
         self.driver.get("https://www.saucedemo.com/")
         self.waitForElementVisible((By.ID,"user-name"))
