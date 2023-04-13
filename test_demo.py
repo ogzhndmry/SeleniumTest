@@ -51,6 +51,7 @@ class Test_DemoClass:
         actions.perform()
         loginBtn = self.driver.find_element(By.ID,"login-button")
         loginBtn.click()
+        self.driver.save_screenshot(f"{self.folderPath}/test-valid-login-{username}-{password}.png")
 
     def waitForElementVisible(self,locator,timeout=5):
         WebDriverWait(self.driver,timeout).until(ec.visibility_of_element_located(locator))  
