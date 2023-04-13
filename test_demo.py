@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.action_chains import ActionChains
-import pytest
+from pytest import mark
 from pathlib import Path
 from datetime import date
 
@@ -32,8 +32,8 @@ class Test_DemoClass:
         # 3A Act Arrange Assert
         text = "Hello"
         assert text == "Hello"
-    #@pytest.mark.skip()
-    @pytest.mark.parametrize("username,password",[("1","1"), ("kullaniciadim","sifrem")])
+    #@mark.skip()
+    @mark.parametrize("username,password",[("1","1"), ("kullaniciadim","sifrem")])
     def test_invalid_login(self,username,password):
         self.waitForElementVisible((By.ID,"user-name"))
         userNameInput = self.driver.find_element(By.ID,"user-name")
